@@ -45,7 +45,7 @@ export function App() {
   const handleConversao = async () => {
     try {
       const valorNumerico = parseFloat(valor.replace(',', '.')); // Converte o valor para número
-      const response = await axios.get(`http://localhost:8080/conversao`, {
+      const response = await axios.get(`http://44.204.219.241:25000/conversao`, {
         params: {
           para: moedaSelecionada,
           valor: valorNumerico,
