@@ -65,7 +65,7 @@ export function App() {
 
   async function fetchMoedas() {
     try {
-      const res = await axios.get<Moeda[]>("http://127.0.0.1:5000/moedas");
+      const res = await axios.get<Moeda[]>("http://34.202.151.106:5000/moedas");
       if (Array.isArray(res.data)) {
         setMoedas(res.data);
         if (!moedaSelecionada && res.data.length > 0) {
@@ -98,7 +98,7 @@ export function App() {
       return;
     }
     try {
-      await axios.post("http://127.0.0.1:5000/moedas", { nome: nomeCriar.trim(), valor: valorNum });
+      await axios.post("http://34.202.151.106:5000/moedas", { nome: nomeCriar.trim(), valor: valorNum });
       setOpenCriar(false);
       setNomeCriar("");
       setValorCriar("");
@@ -139,7 +139,7 @@ export function App() {
       return;
     }
     try {
-      await axios.put(`http://127.0.0.1:5000/moedas/${nomeEditar.trim()}`, { valor: valorNum });
+      await axios.put(`http://34.202.151.106:5000/moedas/${nomeEditar.trim()}`, { valor: valorNum });
       setOpenEditar(false);
       setNomeEditar("");
       setValorEditar("");
@@ -159,7 +159,7 @@ export function App() {
       return;
     }
     try {
-      await axios.delete(`http://127.0.0.1:5000/moedas/${nomeDeletar.trim()}`);
+      await axios.delete(`http://34.202.151.106:5000/moedas/${nomeDeletar.trim()}`);
       setOpenDeletar(false);
       setNomeDeletar("");
       fetchMoedas();
