@@ -65,7 +65,7 @@ export function App() {
 
   async function fetchMoedas() {
     try {
-      const res = await axios.get<Moeda[]>("https://epb5oax00l.execute-api.us-east-1.amazonaws.com/prod/moedas/");
+      const res = await axios.get<Moeda[]>("https://epb5oax00l.execute-api.us-east-1.amazonaws.com/prod/moedas");
       if (Array.isArray(res.data)) {
         setMoedas(res.data);
         if (!moedaSelecionada && res.data.length > 0) {
